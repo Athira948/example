@@ -1,0 +1,12 @@
+"token" : "0x4533cb6f8362f0a87a7f4663b925365768a0ffaf", 
+
+"token" : "0x8e3baf986041432ad47825f42667edbdfc176ad6", 
+
+  "token" : "0xd747dbfffa2e806ee769a67cc627428c61de5942", 
+ db.CollectionNameGoesHere.aggregate({ $match: {
+    $and: [
+        { hour: { $gte: 11 } },
+        { hour: { $lte: 12 } }
+    ]
+} },
+{ $group: { _id : null, sum : { $sum: "$incoming" } } });
